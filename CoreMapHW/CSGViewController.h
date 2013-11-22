@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSGAnnotation.h"
 
-@interface CSGViewController : UIViewController
+@interface CSGViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+
+- (IBAction)getCurrentLocation:(id)sender;
 
 @end
+

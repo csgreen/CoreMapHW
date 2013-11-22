@@ -21,6 +21,9 @@
 		CF9749FA183B1FB20056596A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9749DC183B1FB20056596A /* UIKit.framework */; };
 		CF974A02183B1FB20056596A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF974A00183B1FB20056596A /* InfoPlist.strings */; };
 		CF974A04183B1FB20056596A /* CoreMapHWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF974A03183B1FB20056596A /* CoreMapHWTests.m */; };
+		CF974A0E183B210E0056596A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF974A0D183B210E0056596A /* CoreLocation.framework */; };
+		CF974A10183B21160056596A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF974A0F183B21160056596A /* MapKit.framework */; };
+		CFBF2ADB183B264600945D23 /* CSGAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBF2ADA183B264600945D23 /* CSGAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		CF9749FF183B1FB20056596A /* CoreMapHWTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreMapHWTests-Info.plist"; sourceTree = "<group>"; };
 		CF974A01183B1FB20056596A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF974A03183B1FB20056596A /* CoreMapHWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreMapHWTests.m; sourceTree = "<group>"; };
+		CF974A0D183B210E0056596A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CF974A0F183B21160056596A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CFBF2AD9183B264600945D23 /* CSGAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGAnnotation.h; sourceTree = "<group>"; };
+		CFBF2ADA183B264600945D23 /* CSGAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF974A10183B21160056596A /* MapKit.framework in Frameworks */,
+				CF974A0E183B210E0056596A /* CoreLocation.framework in Frameworks */,
 				CF9749DB183B1FB20056596A /* CoreGraphics.framework in Frameworks */,
 				CF9749DD183B1FB20056596A /* UIKit.framework in Frameworks */,
 				CF9749D9183B1FB20056596A /* Foundation.framework in Frameworks */,
@@ -82,6 +91,8 @@
 		CF9749CC183B1FB20056596A = {
 			isa = PBXGroup;
 			children = (
+				CFBF2AD9183B264600945D23 /* CSGAnnotation.h */,
+				CFBF2ADA183B264600945D23 /* CSGAnnotation.m */,
 				CF9749DE183B1FB20056596A /* CoreMapHW */,
 				CF9749FD183B1FB20056596A /* CoreMapHWTests */,
 				CF9749D7183B1FB20056596A /* Frameworks */,
@@ -101,6 +112,8 @@
 		CF9749D7183B1FB20056596A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF974A0F183B21160056596A /* MapKit.framework */,
+				CF974A0D183B210E0056596A /* CoreLocation.framework */,
 				CF9749D8183B1FB20056596A /* Foundation.framework */,
 				CF9749DA183B1FB20056596A /* CoreGraphics.framework */,
 				CF9749DC183B1FB20056596A /* UIKit.framework */,
@@ -252,6 +265,7 @@
 			files = (
 				CF9749E9183B1FB20056596A /* CSGAppDelegate.m in Sources */,
 				CF9749EF183B1FB20056596A /* CSGViewController.m in Sources */,
+				CFBF2ADB183B264600945D23 /* CSGAnnotation.m in Sources */,
 				CF9749E5183B1FB20056596A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +475,7 @@
 				CF974A09183B1FB20056596A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF974A0A183B1FB20056596A /* Build configuration list for PBXNativeTarget "CoreMapHWTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +484,7 @@
 				CF974A0C183B1FB20056596A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
