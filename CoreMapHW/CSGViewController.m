@@ -23,6 +23,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     locationManager = [[CLLocationManager alloc] init];
+    locationManager.distanceFilter = 10;
+    locationManager.delegate = self;
+//    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+
     
 }
 
@@ -54,18 +58,16 @@
     [_mapView setRegion:myRegion animated:YES];
     
 }
--(CLLocationCoordinate2D) getLocation
-{
-    CLLocationManager *locationManager1 = [[CLLocationManager alloc] init];
-    locationManager1.delegate = self;
-    locationManager1.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager1.distanceFilter = kCLDistanceFilterNone;
-    [locationManager1 startUpdatingLocation];
-    CLLocation *location = [locationManager1 location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    
-    return coordinate;
-}
+//-(CLLocationCoordinate2D) getLocation
+//{
+//  
+//  
+//    [locationManager startUpdatingLocation];
+//    CLLocation *location = [locationManager location];
+//    CLLocationCoordinate2D coordinate = [location coordinate];
+//    
+//    return coordinate;
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -73,10 +75,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)getCurrentLocation:(id)sender  {
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
+- (IBAction)getCurrentLocation:(id)sender
+{
+    [locationManager stopUpdatingLocation];
     [locationManager startUpdatingLocation];
 }
 
@@ -84,7 +85,7 @@
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"didFailWithError: %@", error);
+    NSLog(@"didFailWithError: %@", error.debugDescription);
     UIAlertView *errorAlert = [[UIAlertView alloc]
                                initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
@@ -99,5 +100,8 @@
 //        longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
 //        latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
 //    }
+    
+//    [_mapView setCenterCoordinate:newLocation.coordinate animated:NO];
+    [_mapView setRegion:MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 100, 100) animated:YES];
 }
 @end
